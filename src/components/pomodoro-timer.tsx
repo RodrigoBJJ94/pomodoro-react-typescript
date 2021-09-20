@@ -70,21 +70,27 @@ export function PomodoroTimer(props: Props): JSX.Element {
     }, [working, resting, mainTime, completedCycles, cyclesAmount, pomodorosAmount, configureRest, configureWork, setCompletedCycles, props.cycles]);
 
     return (
-        <div className="pomodoro">
-            <h2>You Are: {working ? 'Working' : 'Resting'}</h2>
-            <Timer mainTime={mainTime} />
-
-            <div className="controls">
-                <Button text="Work" onclick={() => configureWork()}></Button>
-                <Button text="Rest" onclick={() => configureRest(false)}></Button>
-                <Button className={!working && !resting ? 'hidden' : ''} text={timeCounting ? 'Pause' : 'Play'} onclick={() => setTimeCounting(!timeCounting)}></Button>
+        <>
+            <div>
+                <h1 className="title">Pomodoro</h1>
             </div>
+            <div className="pomodoro">
 
-            <div className="details">
-                <p>Completed Pomodoros: {pomodorosAmount}</p>
-                <p>Worked Hours: {secondsToTime(fullWorkingTime)}</p>
-                <p>Completed Cycles: {completedCycles}</p>
+                <h2>You Are: {working ? 'Working' : 'Resting'}</h2>
+                <Timer mainTime={mainTime} />
+
+                <div className="controls">
+                    <Button text="Work" onclick={() => configureWork()}></Button>
+                    <Button text="Rest" onclick={() => configureRest(false)}></Button>
+                    <Button className={!working && !resting ? 'hidden' : ''} text={timeCounting ? 'Pause' : 'Play'} onclick={() => setTimeCounting(!timeCounting)}></Button>
+                </div>
+
+                <div className="details">
+                    <p>Completed Pomodoros: {pomodorosAmount}</p>
+                    <p>Worked Hours: {secondsToTime(fullWorkingTime)}</p>
+                    <p>Completed Cycles: {completedCycles}</p>
+                </div>
             </div>
-        </div>
+        </>
     );
 };

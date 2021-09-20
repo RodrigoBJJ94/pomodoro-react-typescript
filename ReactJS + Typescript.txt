@@ -1,3 +1,0 @@
-npx create-react-app nomedoprojeto --template typescript
-
-npm start

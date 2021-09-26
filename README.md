@@ -1,2 +1,2 @@
-# pomodoro-react-typescript-html-css
- pomodoro-react-typescript-html-css
+# pomodoro-react-typescript
+ pomodoro-react-typescript
